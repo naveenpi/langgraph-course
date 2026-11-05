@@ -30,6 +30,7 @@ flow.add_conditional_edges(AGENT_REASON, should_continue, {
 
 flow.add_edge(ACT, AGENT_REASON)
 
+# This is a compiled state graph that can be used to run the ReAct flow. Here we have control on how the llm model uses the tools.
 app = flow.compile()
 app.get_graph().draw_mermaid_png(output_file_path="flow.png")
 
